@@ -147,16 +147,20 @@ Test your endpoints using Postman or curl:
 ## Considerations
 
 **1. Input Validation**
+
 - Ensure the `title` field is provided.
 - Return a `400 Bad Request` if missing.
 
 **2. Event Not Found**
+
 - Return `404 Not Found` with a clear message when the event ID doesn't exist.
 
 **3. Reusable Logic**
+
 - Consider writing a helper function to look up events by ID.
 
 **4. Scalability**
+
 - While using a single file works here, separate concerns into modules as your API grows.
 
 ---
@@ -168,6 +172,42 @@ After completing this lab, you will:
 ✅ Know how to handle incoming JSON with Flask  
 ✅ Build routes that implement full CRUD behavior  
 ✅ Simulate persistent resource changes in memory  
-✅ Return proper HTTP status codes and structured responses  
+✅ Return proper HTTP status codes and structured responses
 
 This is a critical step in your backend developer journey. Next up: persistent databases!
+
+## Run & Test (local)
+
+Use a virtual environment to avoid modifying system packages:
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install --upgrade pip
+.venv/bin/python -m pip install flask pytest
+```
+
+Start the development server:
+
+```bash
+.venv/bin/python app.py
+```
+
+Run the test suite:
+
+```bash
+.venv/bin/pytest -q
+```
+
+## Git & Submission
+
+- Stage and commit your final changes and push to your repository's `main` branch:
+
+```bash
+git add .
+git commit -m "Complete Flask CRUD API implementation and README"
+git push origin main
+```
+
+- Then create a submission in CodeGrade using the lab's assignment link (the most recent commit on `main` will be graded).
+
+If you want, I can run these git commands for you now and push the README update.
